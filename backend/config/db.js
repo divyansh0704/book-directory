@@ -3,12 +3,16 @@ const path = require("path");
 require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
 
 const sequelize = new Sequelize(
-    process.env.DB_NAME,
-    process.env.DB_USER,
-    process.env.DB_PASS,
+    process.env.BASE_URL,
     {
-    host:process.env.DB_HOST,
     dialect:process.env.DB_DIALECT,
+    dialectOptions: {
+        ssl: {
+            require: true,
+            rejectUnauthorized: false, // Required for Neon + Render
+        },
+    },
+    logging: false,
 });
 
 

@@ -7,6 +7,7 @@ const app = express();
 const cors = require("cors");
 const routes = require("./routes/bookRoute")
 
+const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
@@ -25,5 +26,5 @@ sequelize.sync()
  .then(()=>console.log("Database Synced"))
  .catch((err)=>console.error("Sync error",err));
 
-app.listen(5000,()=>console.log("server is running on port 5000"))
+app.listen(PORT,()=>console.log(`server is running on port ${PORT}`))
 
