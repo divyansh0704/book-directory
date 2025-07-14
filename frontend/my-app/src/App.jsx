@@ -15,7 +15,7 @@ function App() {
 
 
   const fetchBooks = async () => {
-     const url ="http://localhost:5000/api/books"
+     const url ="https://book-directory-k827.onrender.com/api/books"
     //  authorFilter
       // ? `http://localhost:5000/api/books?author=${authorFilter}`
       // : `http://localhost:5000/api/books`;
@@ -33,12 +33,12 @@ function App() {
   }
   const addBook = async () => {
     if (!form.title || !form.author) return;
-    await axios.post("http://localhost:5000/api/books", form)
+    await axios.post("https://book-directory-k827.onrender.com/api/books", form)
     setForm({ title: "", author: "" })
     fetchBooks(filter);
   }
   const deleteBook = async (id) => {
-    await axios.delete(`http://localhost:5000/api/books/${id}`)
+    await axios.delete(`https://book-directory-k827.onrender.com/api/books/${id}`)
     fetchBooks(filter);
   }
 
