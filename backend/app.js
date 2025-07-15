@@ -26,5 +26,10 @@ sequelize.sync()
  .then(()=>console.log("Database Synced"))
  .catch((err)=>console.error("Sync error",err));
 
+app.get("/", (req, res) => {
+  res.send("🟢 Portfolio backend is running!");
+});
+
+
 app.listen(PORT,()=>console.log(`server is running on port ${PORT}`))
 
