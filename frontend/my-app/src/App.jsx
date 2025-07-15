@@ -56,7 +56,7 @@ function App() {
 
       
 
-      <div>
+      <div className="form">
         <input type="text" placeholder="title" value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} />
         <input type="text" placeholder="author" value={form.author} onChange={(e) => setForm({ ...form, author: e.target.value })} />
         <button onClick={addBook}>add book</button>
