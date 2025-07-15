@@ -168,6 +168,9 @@ li button:hover {
 } */
 
 @media (max-width: 600px) {
+  body{
+    background: red;
+  }
   .container {
     width: 95%;
     padding: 20px;
